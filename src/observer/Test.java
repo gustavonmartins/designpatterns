@@ -1,6 +1,6 @@
 package observer;
 
-public class ObserverTest {
+public class Test {
 
 	public static void main(String[] args) {
 		HUD hud1 = new HUD("Taskbar");
