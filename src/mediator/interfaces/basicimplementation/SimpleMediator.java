@@ -26,17 +26,15 @@ public class SimpleMediator implements Mediator {
 
 	@Override
 	public void unregister(Participant removeParticipant) {
-		String participantName = removeParticipant.getParticipantName();
 		if(participantsList.remove(removeParticipant)) {
-			System.out.format("\nParticipant %s has been removed from %s",participantName,this.name);
+			System.out.format("Participant %s has been removed from %s\n",removeParticipant,this.name);
 		}else {
-			System.out.format("\nNo need to remove participant %s from %s",participantName,this.name);
+			System.out.format("No need to remove participant %s from %s\n",removeParticipant,this.name);
 		}
 		
 		
 	}
 	
-	@Override
-	public String getMediatorName() {return this.name;}
+
 
 }

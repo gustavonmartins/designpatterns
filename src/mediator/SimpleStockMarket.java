@@ -24,11 +24,11 @@ public class SimpleStockMarket implements StockMarket {
 	public void putOfferFrom(Offer newOffer) {
 		boolean match=false;
 		for (Offer current:offersList) {
-			if ((current.stockName==newOffer.stockName) 
-					&& (current.amount==newOffer.amount) 
-					&& (current.type != newOffer.type)
+			if ((current.getStockName()==newOffer.getStockName()) 
+					&& (current.getAmount()==newOffer.getAmount()) 
+					&& (current.getType() != newOffer.getType())
 					) {
-				System.out.format("\nMatch for %s",current.stockName);
+				System.out.format("\nMatch for %s",current.getStockName());
 				match=true;
 				offersList.remove(current);
 				
@@ -54,14 +54,14 @@ public class SimpleStockMarket implements StockMarket {
 	public void unregister(Participant removeParticipant) {mediatorComponent.unregister(removeParticipant);}
 
 	@Override
-	public String getMediatorName() {return mediatorComponent.getMediatorName();}
+	public String getMarketName() {return this.name;}
 
 
 
 	@Override
 	public void showStandingOffers() {
 		System.out.println("Standing offers:");
-		offersList.forEach(o->System.out.format("%s %s %d units from %s\n", o.stockName,o.type,o.amount,o.fromParticipant));
+		offersList.forEach(o->System.out.format("%s %s %d units from %s\n", o.getStockName(),o.getType(),o.getAmount(),o.getFromParticipant()));
 		
 	}
 

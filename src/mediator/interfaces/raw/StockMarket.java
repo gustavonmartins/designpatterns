@@ -7,5 +7,6 @@ public interface StockMarket extends Mediator {
 	public void putOfferFrom(Offer newOffer);
 	public void processOffers();
 	public void showStandingOffers();
+	public String getMarketName();
 
 }

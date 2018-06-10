@@ -4,6 +4,6 @@ public interface Mediator {
 	public int register(Participant newParticipant);
 	public void unregister(Participant removeParticipant);
 	
-	public String getMediatorName();
+	
 
 }

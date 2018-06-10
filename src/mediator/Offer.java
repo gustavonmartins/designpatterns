@@ -1,10 +1,10 @@
 package mediator;
 
 public class Offer {
-	public String type;
-	public int amount;
-	public String stockName;
-	public String fromParticipant;
+	private String type;
+	private int amount;
+	private String stockName;
+	private String fromParticipant;
 	
 	public Offer(String type, int amount, String stockName, String fromParticipant) {
 		this.type=type;
@@ -13,5 +13,12 @@ public class Offer {
 		this.fromParticipant=fromParticipant;
 		
 	}
+
+	public String getType() {return type;}
+	public int getAmount() {return amount;}
+	public String getStockName() {return stockName;}
+	public String getFromParticipant() {return fromParticipant;}
+
+
 
 }

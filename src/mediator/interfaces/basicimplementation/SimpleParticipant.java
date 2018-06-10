@@ -14,19 +14,16 @@ public class SimpleParticipant implements Participant {
 	public void registerOn(Mediator mediator) {
 		participantID=mediator.register(this);
 		this.mediator=mediator;
-		System.out.format("\n%s sucessfuly registered at %s",name,this.mediator.getMediatorName());
+		System.out.format("\n%s sucessfuly registered at %s",name,this.mediator);
 		
 	}
 
-	@Override
-	public String getParticipantName() {
-		// TODO Auto-generated method stub
-		return this.name;
-	}
+	
 
 	@Override
 	public void unregister() {
 		mediator.unregister(this);
+		this.mediator=null;
 		
 	}
 

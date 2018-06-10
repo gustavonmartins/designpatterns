@@ -18,7 +18,9 @@ public class SimpleBroker implements Broker {
 	@Override
 	public void createOffer(Offer newOffer) {
 		StockMarket mediator=(StockMarket) participantComponent.getMediator();
-		mediator.putOfferFrom(newOffer);
+		if (mediator!=null) {mediator.putOfferFrom(newOffer);}
+		else {System.out.println("Broker disconnected. Cannot perform action on Stock Market");;}
+		
 	}
 	
 	@Override
@@ -28,7 +30,10 @@ public class SimpleBroker implements Broker {
 	public void unregister() {participantComponent.unregister();}
 
 	@Override
-	public String getParticipantName() {return participantComponent.getParticipantName();}
+	public String getBrokerName() {
+		// TODO Auto-generated method stub
+		return this.name;
+	}
 
 	@Override
 	public Mediator getMediator() {return participantComponent.getMediator();}
